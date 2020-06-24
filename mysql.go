@@ -185,7 +185,7 @@ CREATE TABLE IF NOT EXISTS %s_queue_attributes (
 		delay_seconds            INTEGER UNSIGNED NOT NULL,
 		max_receive_count        INTEGER UNSIGNED NOT NULL,
 		dead_letter_target       VARCHAR(255),
-		UNIQUE(name)
+		UNIQUE(name),
 		UNIQUE(raw_name)
 );`
 	return fmt.Sprintf(query, tablePrefix)
@@ -200,12 +200,11 @@ CREATE TABLE IF NOT EXISTS %s (
         deduplication_id  VARCHAR(255),
         group_id          VARCHAR(255),
         invisible_until   BIGINT UNSIGNED NOT NULL,
-		retry_count       INTEGER UNSIGNED NOT NULL,
+        retry_count       INTEGER UNSIGNED NOT NULL,
         enqueue_at        BIGINT UNSIGNED,
-		PRIMARY KEY (sec_id),
-        UNIQUE(deduplication_id)
-);
-CREATE INDEX IF NOT EXISTS %s_idx_invisible_until_retry_count ON %s (invisible_until, retry_count);
-`
-	return fmt.Sprintf(query, table, table, table)
+        PRIMARY KEY (sec_id),
+        UNIQUE(deduplication_id),
+        INDEX %s_idx_invisible_until_retry_count (invisible_until, retry_count)
+);`
+	return fmt.Sprintf(query, table, table)
 }
