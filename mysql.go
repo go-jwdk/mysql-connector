@@ -108,7 +108,7 @@ WHERE job_id=? AND retry_count=? AND invisible_until=?
 func (sqlTemplate) NewEnqueueJobDML(table, jobID, content string, deduplicationID, groupID *string, delaySeconds int64) (stmt string, args []interface{}) {
 	query := `
 INSERT INTO %s (job_id, content, deduplication_id, group_id, retry_count, invisible_until, enqueue_at)
-VALUES (?, ?, ?, ?, 0, UNIX_TIMESTAMP(NOW()) + ?, UNIX_TIMESTAMP(NOW()) ))
+VALUES (?, ?, ?, ?, 0, UNIX_TIMESTAMP(NOW()) + ?, UNIX_TIMESTAMP(NOW()))
 `
 	return fmt.Sprintf(query, table), []interface{}{jobID, content, deduplicationID, groupID, delaySeconds}
 }
