@@ -1,5 +1,5 @@
-github.com/go-jwdk/db-connector v0.2.2 h1:hevPIWbFCVdndf7v2hIORvmWAw20T31IAlDC9GIhhGU=
-github.com/go-jwdk/db-connector v0.2.2/go.mod h1:lHoiCMELWmJLyhsto4ud7SHLdsjQaynIKJdO0yanc2I=
+github.com/go-jwdk/db-connector v0.2.3 h1:vLIEJYsX1c7Thdn6aTBVSeZg56dfObnv7MduDJ/URYw=
+github.com/go-jwdk/db-connector v0.2.3/go.mod h1:lHoiCMELWmJLyhsto4ud7SHLdsjQaynIKJdO0yanc2I=
 github.com/go-jwdk/jobworker v0.3.0 h1:5uAB+sHIN2ZeX9SqxyTSa1N6UrVDhEC+nyzqU1sPNtY=
 github.com/go-jwdk/jobworker v0.3.0/go.mod h1:h2BwDxld0GGmJDXyrnCKPKsNQbLubm4v9bcQ2vXCnp8=
 github.com/go-sql-driver/mysql v1.5.0 h1:ozyZYNQW3x3HtqT1jira07DN2PArx2v7/mN66gGcHOs=
